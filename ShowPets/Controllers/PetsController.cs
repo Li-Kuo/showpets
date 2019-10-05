@@ -47,7 +47,7 @@ namespace ShowPets.Controllers
         // GET: Pets/Create
         public IActionResult Create()
         {
-            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Species1");
+            ViewData["SpeciesId"] = new SelectList(_context.Species.OrderBy(S => S.Species1), "SpeciesId", "Species1");
             return View();
         }
 
