@@ -1,25 +1,25 @@
 ﻿@model IEnumerable<ShowPets.Models.Species>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Species of pets";
 }
 
-<h1>Index</h1>
+<h1>The species of our pets</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Species1)
+                Species
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Area)
+                Living Area
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsEndangered)
+                Is it endangered?
             </th>
             <th></th>
         </tr>
