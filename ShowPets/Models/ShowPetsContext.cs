@@ -1,10 +1,11 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ShowPets.Models
 {
-    public partial class ShowPetsContext : DbContext
+    public partial class ShowPetsContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         public ShowPetsContext()
         {
@@ -22,13 +23,14 @@ namespace ShowPets.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=ctrlaltpc200414666.database.windows.net;Initial Catalog=ShowPets;Persist Security Info=True;User ID=li;Password=@Ejiu04xu3");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//                optionsBuilder.UseSqlServer("Data Source=ctrlaltpc200414666.database.windows.net;Initial Catalog=ShowPets;Persist Security Info=True;User ID=li;Password=@Ejiu04xu3");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
             modelBuilder.Entity<Pet>(entity =>
